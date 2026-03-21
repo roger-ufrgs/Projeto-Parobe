@@ -1,0 +1,17 @@
+{
+    "name": "roger/parobe",
+    "description": "Projeto final do curso Parobé",
+    "autoload": {
+        "psr-4": {
+            "Roger\\Parobe\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roger Moraes de Moura"
+        }
+    ],
+    "require": {
+        "php-ai/php-ml": "^0.10.0"
+    }
+}

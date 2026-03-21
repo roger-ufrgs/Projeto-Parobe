@@ -1,0 +1,561 @@
+/* =========================
+RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+BODY
+========================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    height: 100vh;
+
+}
+
+
+/* =========================
+LAYOUT
+========================= */
+
+.layout {
+
+    display: flex;
+    height: 100vh;
+
+}
+
+
+/* =========================
+MENU LATERAL
+========================= */
+
+.menu {
+
+    width: 220px;
+    background: #1e293b;
+    color: white;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* =========================
+TÍTULO MENU
+========================= */
+
+.menu-title {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    font-size: 22px;
+
+}
+
+.menu-title i {
+
+    font-size: 22px;
+    color: #3b82f6;
+
+}
+
+
+/* =========================
+LISTA MENU
+========================= */
+
+.menu ul {
+
+    list-style: none;
+
+}
+
+
+/* =========================
+LINKS MENU
+(aplica para todo menu)
+========================= */
+
+.menu a {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+}
+
+
+/* hover */
+
+.menu a:hover {
+
+    background: #334155;
+
+}
+
+
+/* ícones */
+
+.menu a i {
+
+    width: 20px;
+    text-align: center;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+SUBMENU
+========================= */
+
+.submenu {
+
+    margin-top: 10px;
+    padding-left: 10px;
+
+}
+
+.submenu a {
+
+    font-size: 14px;
+    padding: 10px;
+
+}
+
+
+/* =========================
+MAIN
+========================= */
+
+.main {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main h2 {
+
+    text-align: center;
+    padding: 10px;
+
+}
+
+
+/* =========================
+DASHBOARD
+========================= */
+
+.dashboard {
+
+    flex: 1;
+
+    display: flex;
+
+    gap: 20px;
+    padding: 20px;
+
+}
+
+
+/* =========================
+SENSORES
+========================= */
+
+.sensores {
+
+    flex: 6;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+
+/* =========================
+CARD SENSOR
+========================= */
+
+.sensor {
+
+    background: white;
+
+    border-radius: 10px;
+    padding: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+    width: calc(25% - 15px);
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sensor h2 {
+
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================
+GRÁFICOS
+========================= */
+
+.sensor canvas {
+
+    width: 100% !important;
+    height: 200px !important;
+
+}
+
+
+/* =========================
+ALERTAS
+========================= */
+
+.alertas {
+
+    flex: 1;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    
+}
+.alert-box {
+
+    display: grid;
+
+    grid-template-rows: repeat(12, 1fr);
+
+    gap: 8px;
+
+    height: calc(100% - 50px);
+    padding: 5px;
+
+}
+
+/* base do alerta */
+
+
+
+
+.base-alerta {
+
+    flex: 1;
+    min-height: 0;
+
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+
+    border-left: 5px solid;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+}
+
+
+
+/* NORMAL */
+
+.alert-box .normal {
+
+    background: #e8f8f1;
+    color: #1e8449;
+    border-color: #2ecc71;
+
+}
+
+/* ATENCAO */
+
+.alert-box .atencao {
+
+    background: #fef5e7;
+    color: #b9770e;
+    border-color: #f39c12;
+
+}
+
+/* FALHA */
+
+.alert-box .falha {
+
+    background: #fdecea;
+    color: #922b21;
+    border-color: #e74c3c;
+
+}
+
+/* tooltip */
+
+.base-alerta::after{
+
+    content: attr(data-tooltip);
+
+    position:absolute;
+    width: inherit;
+    bottom:120%;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#2c3e50;
+    color:white;
+
+    padding:6px 10px;
+
+    border-radius:4px;
+
+    font-size:12px;
+
+    white-space:pre-line;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 0.2s;
+
+}
+
+/* mostrar tooltip */
+
+.base-alerta:hover::after{
+    opacity:1;
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+.footer {
+
+    background: white;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 10px;
+
+}
+
+
+/* =========================
+STATUS
+========================= */
+
+.status {
+
+    display: flex;
+    gap: 40px;
+
+}
+
+.status div {
+
+    text-align: center;
+
+}
+
+
+/* bolinhas */
+
+.status span {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================
+CORES STATUS
+========================= */
+
+.online {
+    background: #22c55e;
+}
+
+.offline {
+    background: #ef4444;
+}
+
+.sensor-page .dashboard {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 25px;
+}
+
+.sensor-page .graficos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.sensor-page .sensor,
+.sensor-page .outro {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.sensor-page canvas {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+.btn-gpt{
+
+    padding:10px 16px;
+
+    border:none;
+    border-radius:6px;
+
+    background:#95a5a6;
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+}
+
+.btn-gpt:hover{
+
+    opacity:0.85;
+
+}
+
+.btn-gpt.ativo{
+
+    background:#2ecc71;
+
+}
+
+.ia-container{
+
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.ia-lista{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+/* card do diagnóstico */
+
+.ia-card{
+
+    padding:15px;
+
+    background:#f4f6f7;
+
+    border-left:5px solid #3498db;
+
+    border-radius:6px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+/* cabeçalho */
+
+.ia-header{
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+/* status */
+
+.ia-status{
+
+    font-size:13px;
+
+    color:#555;
+
+}
+
+/* resposta da IA */
+
+.ia-resposta{
+
+    font-size:14px;
+
+}
